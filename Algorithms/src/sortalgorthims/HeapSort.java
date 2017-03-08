@@ -12,7 +12,7 @@ public class HeapSort {
 		Tool.printL(b);
 	}
 	
-	public static void HeapAdjust(int[] array, int parent, int length) {
+	public static void heapAdjust(int[] array, int parent, int length) {
 	    int temp = array[parent]; // temp保存当前父节点	   
 	    int child = 2 * parent + 1; // 先获得左孩子	 
 	    while (child < length) {	    	
@@ -35,14 +35,14 @@ public class HeapSort {
 	    // 循环建立初始堆
 		int length = list.length;
 	    for (int i = length / 2; i >= 0; i--) {
-	        HeapAdjust(list, i, length - 1);
+	        heapAdjust(list, i, length - 1);
 	    }	    
 	    // 进行n-1次循环，完成排序
 	    for (int i = length - 1; i > 0; i--) {
 	        // 最后一个元素和第一元素进行交换
 	        Tool.swap(list, 0, i);	 
 	        // 筛选 R[0] 结点，得到i-1个结点的堆
-	        HeapAdjust(list, 0, i);
+	        heapAdjust(list, 0, i);
 	    }	  
 	    return list;
 	}

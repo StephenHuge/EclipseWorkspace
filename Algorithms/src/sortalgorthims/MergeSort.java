@@ -3,15 +3,16 @@ package sortalgorthims;
 public class MergeSort {
 	
 	public static void main(String[] args){
-		int[] a = Tool.getRandomArray(9546400);	//生成一个长度为9546400的数组
-//		int[] a = {11,25,32,1,3,4,37,12,33,13,32,10,38,58,7,4,63,33,6,43,4,21,14,24,62,4,42,1};
+//		int[] a = Tool.getRandomArray(9546400);	//生成一个长度为9546400的数组
+		int[] a = {11,25,32,1,3,4,37,12,33,13,32,10,38,58,7,4,63,33,6,43,4,21,14,24,62,4,42,1};
 //		Tool.print(a);
 		Tool.print("--------------------------------------");
 //		int[] b = bubbleSort(a);
-		int[] b = sort(a);
+		int[] b = mergeSort(a);
 		Tool.printL(b);
 	}
-	public static void Merge(int[] array, int low, int mid, int high) {
+
+	public static void merge(int[] array, int low, int mid, int high) {
 	    int i = low; // i是第一段序列的下标
 	    int j = mid + 1; // j是第二段序列的下标
 	    int k = 0; // k是临时存放合并序列的下标
@@ -20,13 +21,13 @@ public class MergeSort {
 	    while (i <= mid && j <= high) {
 	        // 判断第一段和第二段取出的数哪个更小，将其存入合并序列，并继续向下扫描
 	        if (array[i] <= array[j]) {
-	            array2[k] = array[i];
-	            i++;
-	            k++;
+	            array2[k++] = array[i++];
+//	            i++;
+//	            k++;
 	        } else {
-	            array2[k] = array[j];
-	            j++;
-	            k++;
+	            array2[k++] = array[j++];
+//	            j++;
+//	            k++;
 	        }
 	    }
 	    // 若第一段序列还没扫描完，将其全部复制到合并序列
@@ -46,20 +47,20 @@ public class MergeSort {
 	        array[i] = array2[k];
 	    }
 	}
-	public static void MergePass(int[] array, int gap, int length) {
+	public static void mergePass(int[] array, int gap, int length) {
 	    int i = 0;
-	    //	归并gap长度的两个相邻子表
-	    for (i = 0; i + 2 * gap - 1 < length; i = i + 2 * gap) {
-	        Merge(array, i, i + gap - 1, i + 2 * gap - 1);
-	    }
-	    // 余下两个子表，后者长度小于gap
-	    if (i + gap - 1 < length) {
-	        Merge(array, i, i + gap - 1, length - 1);
+	    //	归并gap长度的两个相邻子表.如果i之后还有两个gap的长度，就继续循环否则跳出循环。
+	    //	每次进行两个gap之间的归并，刚开始gap==1	,  每两个数进行归并，确定大小后排好序
+	    for (i = 0; i + 2 *gap-1 < length; i = i + 2 * gap) {
+	        merge(array, i, i + gap - 1, i + 2 * gap - 1);
+	    }	    
+	    if (i + gap - 1 < length) {// 余下两个子表，后者长度小于gap
+	        merge(array, i, i + gap - 1, length - 1);
 	    }
 	}
-	public static int[] sort(int[] list) {
+	public static int[] mergeSort(int[] list) {
 	    for (int gap = 1; gap < list.length; gap = 2 * gap) {
-	        MergePass(list, gap, list.length);	        
+	        mergePass(list, gap, list.length);	        
 	    }
 	    return list;
 	}
