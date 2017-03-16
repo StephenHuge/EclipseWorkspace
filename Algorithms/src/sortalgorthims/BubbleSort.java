@@ -3,7 +3,8 @@ package sortalgorthims;
 public class BubbleSort {	
 	
 	public static void main(String[] args){		
-		int[] a = {11,25,32,1,3,4,37,12,33,13,32,10,38,58,7,4,63,33,6,43,4,21,14,24,62,4,42,1};
+		int[] a = {11,25,32,1,3,4,37,12,33,13,32,10,38,58,
+				7,4,63,33,6,43,4,21,14,24,62,4,42,1};
 		Tool.print(a);		
 		int[] b = bubbleSort(a);
 		Tool.print(b);		

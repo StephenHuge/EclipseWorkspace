@@ -36,7 +36,7 @@ public class Tool {
 		System.out.println();
 	}
 	/**
-	 * 打印超长数组时每个9个数字换行，方便显示
+	 * 打印超长数组时每10个数字换行，方便显示
 	 * @param a 一个int型数组（数据量很大，一般大于50）
 	 */
 	public static void printL(int[] a){
@@ -68,8 +68,9 @@ public class Tool {
 		c[b] = temp;
 	}
 	/**	 
-	 * 生成一个长度为log的随机数组，其中的数无序最大值为log-1，最小值为0,且互不重复。		 
-	 * @param log 生成数组的长度
+	 * 生成一个长度为<code>log</code>的随机数组，
+	 * 其中的数无序最大值为<code>log-1</code>，最小值为<code>0</code>,且互不重复。		 
+	 * @param  log 生成数组的长度
 	 * @return 返回生成后的数组
 	 */
 	 public static int[] getRandomArray(int log){
