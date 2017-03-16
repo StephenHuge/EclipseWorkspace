@@ -1,0 +1,2 @@
+从github上传回一句话到本地这是 一个 git 教程
+http://www.cnblogs.com/tinyphp/p/5025311.html
