@@ -9,6 +9,7 @@ package sortalgorthims;
  * @author Steve Huge
  * @version	 1.0
  */
+
 public class Tool {		
 	/**
 	 *打印一个int型的变量 
@@ -59,8 +60,8 @@ public class Tool {
 	 * 	//	data[b] = t;  
 	 *	//}
 	 * @param c int型数组
-	 * @param a 数组下边
-	 * @param b 数组下边
+	 * @param a 数组下标
+	 * @param b 数组下标
 	 */      
 	public static void swap(int[] c, int a, int b){
 		int temp = c[a];
@@ -85,5 +86,25 @@ public class Tool {
 	              swap(result, random, i);
 	     }
 	     return result;
+	 }	 
+	 /**
+	  *	随机生成一个int型二维数组
+	  *	@param row 生成二维数组的行数
+	  *	@param col 生成二维数组的列数
+	  *	@return 返回生成后的二维数组
+	  */
+	 public static int[][] getRandomMatrix2(int row, int col){
+		 int len = col*row;
+		 int[] a = new int[len];
+		 a = getRandomArray(len);
+		 int[][] aa = new int[row][col];
+		 int j = 0;
+		 for (int i = 0; i < len; i++) {			 
+//			 aa[j][i % col] = a[i];
+			 aa[j][i % col] = i+1;
+			 if((i+1) % col==0)				 
+				 j++;			 				 			
+		 }		    
+		 return aa;
 	 }
 }

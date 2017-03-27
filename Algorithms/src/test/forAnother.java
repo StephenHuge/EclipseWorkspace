@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -16,6 +16,7 @@ public class forAnother {
 	Iterator<String> a = l.iterator();
 	while(a.hasNext()){
 		String s = a.next();
+//		a.remove();	
 		System.out.println(s);
 	}
 	}

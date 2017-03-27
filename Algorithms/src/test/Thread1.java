@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 public class Thread1 implements Runnable{
 	int k = 10;

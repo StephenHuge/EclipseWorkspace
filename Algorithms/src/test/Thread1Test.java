@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 public class Thread1Test {
 	public static void main(String[] args){
