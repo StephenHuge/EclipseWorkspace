@@ -38,7 +38,7 @@ public class Tool {
 	}
 	/**
 	 * 打印超长数组时每10个数字换行，方便显示
-	 * @param a 一个int型数组（数据量很大，一般大于50）
+	 * @param a 一个int型数组（数据量较大，一般大于20）
 	 */
 	public static void printL(int[] a){
 		int length = a.length;

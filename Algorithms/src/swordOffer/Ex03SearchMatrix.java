@@ -3,13 +3,13 @@ package swordOffer;
 import sortalgorthims.Tool;
 
 /**
- * ÕâÊÇ½£Ö¸offerµÄµÚ¶şÌâ£º
- * Ò»¸ö¶şÎ¬Êı×é£¬Ã¿Ò»ĞĞ´Ó×óµ½ÓÒµİÔö£¬Ã¿Ò»ÁĞ´ÓÉÏµ½ÏÂµİÔö£®Êä
- * ÈëÒ»¸ö¶şÎ¬Êı×éºÍÒ»¸öÕûÊı£¬ÅĞ¶ÏÊı×éÖĞÊÇ·ñº¬ÓĞÕûÊı¡£
+ * è¿™æ˜¯å‰‘æŒ‡offerçš„ç¬¬3é¢˜ï¼š
+ * ä¸€ä¸ªäºŒç»´æ•°ç»„ï¼Œæ¯ä¸€è¡Œä»å·¦åˆ°å³é€’å¢ï¼Œæ¯ä¸€åˆ—ä»ä¸Šåˆ°ä¸‹é€’å¢ï¼è¾“
+ * å…¥ä¸€ä¸ªäºŒç»´æ•°ç»„å’Œä¸€ä¸ªæ•´æ•°ï¼Œåˆ¤æ–­æ•°ç»„ä¸­æ˜¯å¦å«æœ‰æ•´æ•°ã€‚
  * @author Stephen Huge
  */
 
-public class Ex02SearchMatrix {
+public class Ex03SearchMatrix {
 	public static void main(String[] args){
 		int[][] a = Tool.getRandomMatrix2(2, 2);
 		for(int i=0; i<a.length; i++)
@@ -19,15 +19,15 @@ public class Ex02SearchMatrix {
 	}
 
 	/**
-	 * ÔÚ{@code int}ĞÍ¶şÎ¬Êı×éÑ°ÕÒ{@code int}ĞÍ±äÁ¿sÊÇ·ñ´æÔÚ£¬´æÔÚ·µ»Ø{@code true}£¬·ñÔò·µ»Ø{@code false}£»
-	 * @param a {@code int}ĞÍ¶şÎ¬Êı×é
-	 * @param s ÒªÑ°ÕÒµÄ{@code int}ĞÍ±äÁ¿
-	 * @return Èç¹ûÊı×éaÖĞ´æÔÚs£¬Ôò·µ»Ø{@code true}£¬·ñÔò·µ»Ø{@code false}
+	 * åœ¨{@code int}å‹äºŒç»´æ•°ç»„å¯»æ‰¾{@code int}å‹å˜é‡sæ˜¯å¦å­˜åœ¨ï¼Œå­˜åœ¨è¿”å›{@code true}ï¼Œå¦åˆ™è¿”å›{@code false}ï¼›
+	 * @param a {@code int}å‹äºŒç»´æ•°ç»„
+	 * @param s è¦å¯»æ‰¾çš„{@code int}å‹å˜é‡
+	 * @return å¦‚æœæ•°ç»„aä¸­å­˜åœ¨sï¼Œåˆ™è¿”å›{@code true}ï¼Œå¦åˆ™è¿”å›{@code false}
 	 */
 	public static boolean searchMatrix(int[][] a, int s){
 		if (a==null)	return false;
-		int col = a[0].length-1;		//ÁĞÊı
-		int row = 0;					//ĞĞÊı
+		int col = a[0].length-1;		//åˆ—æ•°
+		int row = 0;					//è¡Œæ•°
 		while(col>=0 && row<a.length){
 			if (a[row][col]==s)	return true;
 			if (a[row][col]>s)		
@@ -38,14 +38,14 @@ public class Ex02SearchMatrix {
 		return false;	
 	}
 }		
-		/*	//´íÎóµÄ·½·¨
+		/*	//é”™è¯¯çš„æ–¹æ³•
 		if (a==null)	return false;	
 		
-		int col = a.length-1;		//ĞĞÊı
-		int row = a[0].length-1;	//ÁĞÊı
+		int col = a.length-1;		//è¡Œæ•°
+		int row = a[0].length-1;	//åˆ—æ•°
 		if (a[col][row]<s)	return false;
 		while(true){
-			while(col > row){			//ĞĞÊı´óÓÚÁĞÊı£¬°´ĞĞËÑË÷			
+			while(col > row){			//è¡Œæ•°å¤§äºåˆ—æ•°ï¼ŒæŒ‰è¡Œæœç´¢			
 				col /= 2;
 				if (a[col][row]==s)	return true;
 				if (a[col][row] > s)	break;
@@ -57,7 +57,7 @@ public class Ex02SearchMatrix {
 				}
 				
 			}
-			while(col < row ){			//ĞĞÊıĞ¡ÓÚÁĞÊı£¬°´ÁĞËÑË÷			
+			while(col < row ){			//è¡Œæ•°å°äºåˆ—æ•°ï¼ŒæŒ‰åˆ—æœç´¢			
 				row /= 2;
 				if (a[col][row]==s)	return true;
 				if (a[col][row]>s)	break;
